@@ -1,15 +1,14 @@
-package com.devteria.profile.entity;
+package com.devteria.profile.entiry;
 
-import java.time.LocalDate;
-
+import lombok.*;
+import lombok.experimental.FieldDefaults;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
 import org.springframework.data.neo4j.core.schema.Id;
 import org.springframework.data.neo4j.core.schema.Node;
 import org.springframework.data.neo4j.core.schema.Property;
 import org.springframework.data.neo4j.core.support.UUIDStringGenerator;
 
-import lombok.*;
-import lombok.experimental.FieldDefaults;
+import java.util.Date;
 
 @Getter
 @Setter
@@ -17,7 +16,7 @@ import lombok.experimental.FieldDefaults;
 @NoArgsConstructor
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Node("[user_profile]")
+@Node("user_profile")
 public class UserProfile {
     @Id
     @GeneratedValue(generatorClass = UUIDStringGenerator.class)
@@ -28,6 +27,6 @@ public class UserProfile {
 
     String firstName;
     String lastName;
-    LocalDate dob;
+    Date dob;
     String city;
 }
