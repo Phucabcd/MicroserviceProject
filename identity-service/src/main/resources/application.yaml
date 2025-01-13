@@ -4,19 +4,22 @@ server:
     context-path: /identity
 
 spring:
-  application:
-    name: identity-service
   datasource:
-    url: "jdbc:mysql://localhost:3306/bookteria_identity"
-    driverClassName: "com.mysql.cj.jdbc.Driver"
-    username: root
-    password: root
+    url: jdbc:sqlserver://localhost:1433;databaseName=identity_service;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: phuc819615
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+    properties:
+      hibernate:
+        naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        dialect: org.hibernate.dialect.SQLServerDialect
 
 jwt:
+
   signerKey: "1TjXchw5FloESb63Kc+DFhTARvpWL4jUGCwfGWxuG5SIf/1y/LgJxHnMqaF6A/ij"
   valid-duration: 3600 # in second
   refreshable-duration: 36000 # in seconds
