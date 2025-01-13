@@ -4,7 +4,6 @@ import com.devteria.gateway.dto.ApiResponse;
 import com.devteria.gateway.service.IdentityService;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import io.netty.handler.codec.http.HttpResponseStatus;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
@@ -49,7 +48,6 @@ public class AuthenticationFilter implements GlobalFilter, Ordered {
 
         if (isPublicEndpoint(exchange.getRequest()))
            return chain.filter(exchange);
-
 
         // Get token from authorization header
         List<String> authHeader = exchange.getRequest().getHeaders().get(HttpHeaders.AUTHORIZATION);
