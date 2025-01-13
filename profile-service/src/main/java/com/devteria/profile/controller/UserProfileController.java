@@ -27,4 +27,5 @@ public class UserProfileController {
     List<UserProfileResponse> getAllProfiles() {
         return userProfileService.getAllProfiles();
     }
+
 }
