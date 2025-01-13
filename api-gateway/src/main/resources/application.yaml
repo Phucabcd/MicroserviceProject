@@ -22,4 +22,3 @@ spring:
           predicates:
             - Path=${app.api-prefix}/profile/users/**
           filters:
-            - StripPrefix=1
