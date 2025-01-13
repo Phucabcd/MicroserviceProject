@@ -19,9 +19,11 @@ spring:
         dialect: org.hibernate.dialect.SQLServerDialect
 
 jwt:
-  signerKey: "CZCWlbYADx8NG6raxoJFnpCUl6+2F3wam6b8o9Hcr9BwhieBMX/aUjEgsjTVoL9w"
-  valid-duration: 5000 #in second
-  refreshable-duration: 50000 # seconds
+
+  signerKey: "1TjXchw5FloESb63Kc+DFhTARvpWL4jUGCwfGWxuG5SIf/1y/LgJxHnMqaF6A/ij"
+  valid-duration: 3600 # in second
+  refreshable-duration: 36000 # in seconds
+
 
 app:
   service:
